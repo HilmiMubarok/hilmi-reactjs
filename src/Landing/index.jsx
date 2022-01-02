@@ -1,6 +1,7 @@
 import React from "react";
 
 import Avatar from "./Avatar";
+import Card from "./Card";
 
 class Landing extends React.Component {
 
@@ -14,15 +15,9 @@ class Landing extends React.Component {
                 <p className="text-4xl">React app project for MERN Eduwork class</p>
 
                 <div className="container grid grid-cols-4 gap-4 mt-[100px]">
-                    <div className="font-bold w-full border border-white rounded rounded-lg shadow-lg p-[20px] bg-white text-gray-900 flex flex-col items-center">
-                        <p className="text-6xl">1</p>
-                        <p className="text-xl">Basic Components</p>
-                    </div>
+                    <Card number="1" title="Basic Components" />
 
-                    <div className="font-bold w-full border border-white rounded rounded-lg shadow-lg p-[20px] bg-white text-gray-900 flex flex-col items-center">
-                        <p className="text-6xl">2</p>
-                        <p className="text-xl">Styling Components</p>
-                    </div>
+                    <Card number="2" title="Styling Components" />
                 </div>
 
             </div>
