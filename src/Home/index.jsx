@@ -17,18 +17,12 @@ class Home extends React.Component {
         this.setState({
             value : this.backgrounds[this.random()]
         })
-        // return this.state.value
     }
 
     random = () => {
         return Math.floor(Math.random() * this.backgrounds.length)
     }
     render () {
-
-        // console.log(this.state.value[this.random()])
-        console.log(this.random())
-        // console.log(this.backgrounds.length)
-
 
         return (
             <div className="bg-gray-900 text-white w-full h-screen flex items-center flex-col justify-center">
