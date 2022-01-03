@@ -17,7 +17,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://hilmi-reactjs.herokuapp.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
