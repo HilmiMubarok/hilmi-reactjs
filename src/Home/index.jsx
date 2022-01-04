@@ -13,23 +13,22 @@ class Home extends React.Component {
         "bg-white", "bg-red-600", "bg-emerald-600", "bg-orange-600",
         "bg-amber-600", "bg-yellow-600", "bg-lime-600", "bg-green-600",
     ]
+
     randomize = () => {
         this.setState({
             value : this.backgrounds[this.random()]
         })
     }
 
-    random = () => {
-        return Math.floor(Math.random() * this.backgrounds.length)
-    }
+    random = () => Math.floor(Math.random() * this.backgrounds.length)
+    
+
     render () {
 
         return (
             <div className="bg-gray-900 text-white w-full h-screen flex items-center flex-col justify-center">
-                
-
+            
                 <Avatar/>
-                <p className="text-4xl">React app project for MERN Eduwork class</p>
 
                 <div className="container mt-[100px]">
                     <div className="flex justify-between">
@@ -38,7 +37,7 @@ class Home extends React.Component {
                             Randomize bg card
                         </button>
                     </div>
-                    <div className="grid grid-cols-4 gap-4 mt-5">
+                    <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4 mt-5">
 
                         <Card number="1" bg={this.backgrounds[this.random()]} title="Basic Components" />
 
