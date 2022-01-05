@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Client from "../Client";
 import Contact from "../Contact";
-import Header from "./header";
 import Work from "./work";
+const Header = React.lazy(() => import('./header'))
 
 export default class Portfolio extends React.Component {
 
@@ -10,7 +10,9 @@ export default class Portfolio extends React.Component {
         return (
             <div className="bg-gradient-to-bl from-indigo-500 to-indigo-900 text-white w-full  flex flex-col justify-center">
                 <div className="container mx-auto">
-                    <Header />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Header />
+                    </Suspense>
                 </div>
                 <div className="mt-16 bg-gradient-to-tl from-indigo-500 to-indigo-900">
                     <div className="container mx-auto">
