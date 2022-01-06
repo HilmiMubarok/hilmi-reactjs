@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const ContactForm = () => {
+
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -20,7 +21,7 @@ const ContactForm = () => {
                 .required('Message is Required'),
         }),
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values))
         },
     });
     return (
@@ -76,9 +77,7 @@ const ContactForm = () => {
     );
 };
 
-
 export default class Contact extends React.Component {
-
     render() {
 
         return (
