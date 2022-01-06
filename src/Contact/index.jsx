@@ -11,6 +11,7 @@ const ContactForm = () => {
         },
         validationSchema: Yup.object({
             name: Yup.string()
+                .min(3, 'Must be 3 characters or more')
                 .max(15, 'Must be 15 characters or less')
                 .required('Name is Required'),
             email: Yup.string().email('Invalid email address').required('Email is Required'),
@@ -28,10 +29,8 @@ const ContactForm = () => {
 
             {formik.touched.name && formik.errors.name ? (
                 <div>
-                    <div>
-                        <label htmlFor="name" className="text-xl">Name</label>
-                        <input id="name" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name} className="border-2 border-red-500 p-4 mt-4 bg-gray-900 text-white w-full rounded-lg" placeholder="Input your name" />
-                    </div>
+                    <label htmlFor="name" className="text-xl">Name</label>
+                    <input id="name" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name} className="border-2 border-red-500 p-4 mt-4 bg-gray-900 text-white w-full rounded-lg" placeholder="Input your name" />
                     <div className="text-red-500 p-3 font-bold">{formik.errors.name}</div>
                 </div>
             ) :
@@ -45,10 +44,8 @@ const ContactForm = () => {
 
             {formik.touched.email && formik.errors.email ? (
                 <div>
-                    <div>
-                        <label htmlFor="email" className="text-xl">Email</label>
-                        <input id="email" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} type="email" className="border-2 border-red-500 p-4 mt-4 bg-gray-900 text-white w-full rounded-lg" placeholder="Input your email" />
-                    </div>
+                    <label htmlFor="email" className="text-xl">Email</label>
+                    <input id="email" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} type="email" className="border-2 border-red-500 p-4 mt-4 bg-gray-900 text-white w-full rounded-lg" placeholder="Input your email" />
                     <div className="text-red-500 p-3 font-bold">{formik.errors.email}</div>
                 </div>
             ) :
@@ -60,10 +57,8 @@ const ContactForm = () => {
 
             {formik.touched.msg && formik.errors.msg ? (
                 <div>
-                    <div>
-                        <label htmlFor="msg" className="text-xl">Message</label>
-                        <textarea id="msg" onChange={formik.handleChange} onBlur={formik.handleBlur} rows="10" className="border-2 border-red-500 p-4 mt-4 bg-gray-900 text-white w-full rounded-lg" value={formik.values.msg} >{formik.values.msg}</textarea>
-                    </div>
+                    <label htmlFor="msg" className="text-xl">Message</label>
+                    <textarea id="msg" onChange={formik.handleChange} onBlur={formik.handleBlur} rows="10" className="border-2 border-red-500 p-4 mt-4 bg-gray-900 text-white w-full rounded-lg" value={formik.values.msg} >{formik.values.msg}</textarea>
                     <div className="text-red-500 p-3 font-bold">{formik.errors.msg}</div>
                 </div>
             ) :
@@ -77,10 +72,10 @@ const ContactForm = () => {
             <button type="submit" className="bg-gradient-to-r from-orange-600 to-amber-600 hover:bg-gradient-to-l hover:from-orange-500 hover:to-amber-500 p-3 w-full sm:w-[200px] rounded-lg">
                 Send to me
             </button>
-            i
         </form>
     );
 };
+
 
 export default class Contact extends React.Component {
 
