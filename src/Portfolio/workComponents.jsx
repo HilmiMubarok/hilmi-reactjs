@@ -7,7 +7,7 @@ export default class WorkComponents extends React.Component {
 
         return (
             <div className="p-2 rounded-xl hover:scale-110 hover:-rotate-3 transition-all">
-                <img src={this.props.url} alt="work" title="work" className="rounded-xl shadow-xl object-cover w-full h-[400px]" />
+                <img src={this.props.url} title="work" className="rounded-xl shadow-xl object-cover w-full h-[400px]" />
             </div>
         )
 

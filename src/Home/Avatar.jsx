@@ -11,5 +11,5 @@ export default class Avatar extends React.Component {
             </div>
         )
     }
-    
+
 }
