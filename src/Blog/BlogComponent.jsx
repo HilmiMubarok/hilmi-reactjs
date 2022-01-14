@@ -46,7 +46,7 @@ class BlogComponent extends Component {
 
             <article className="overflow-hidden rounded-lg bg-white shadow-lg" key={key}>
 
-                <a href="#">
+                <a href={url}>
                     <img alt={title} className="object-cover aspect-[3/2.164] block h-auto w-full" src={urlToImage} />
                 </a>
 
@@ -65,16 +65,12 @@ class BlogComponent extends Component {
                     {description}
                 </p>
                 <footer className="flex items-center justify-between leading-none p-2 md:p-4">
-                    <a className="flex items-center no-underline hover:underline text-black" href="#">
+                    <div className="flex items-center no-underline text-black">
                         <img alt={title} className="block rounded-full w-[30px] h-[30px]" src={urlToImage} />
                         <p className="ml-2 text-sm">
                             {author}
                         </p>
-                    </a>
-                    <a className="no-underline text-grey-darker hover:text-red-dark" href="#">
-                        <span className="hidden">Like</span>
-                        <i className="fa fa-heart"></i>
-                    </a>
+                    </div>
                 </footer>
 
             </article>

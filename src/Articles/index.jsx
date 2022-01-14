@@ -7,7 +7,7 @@ class Articles extends Component {
     state = { isSearch: false }
 
     handleInput = e => {
-        if (e.target.value == "") {
+        if (e.target.value === "") {
             this.setState({ isSearch: false })
         } else {
             this.setState({ isSearch: e.target.value })
