@@ -41,8 +41,6 @@ const ContactForm = () => {
                 </div>
             }
 
-
-
             {formik.touched.email && formik.errors.email ? (
                 <div>
                     <label htmlFor="email" className="text-xl">Email</label>

@@ -1,12 +1,12 @@
 import './App.css';
-import Portfolio from './Portfolio';
+import Articles from './Articles';
 
 function App() {
-return (
-	<div className="App">
-		<Portfolio/>
-	</div>
-);
+	return (
+		<div className="App">
+			<Articles />
+		</div>
+	);
 }
 
 export default App;
