@@ -10,14 +10,12 @@ function Articles() {
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
 
-    // state page
-    const [page, setPage] = useState(1);
 
     // get realtime search
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            const result = await axios(`https://newsapi.org/v2/top-headlines?country=id&sortBy=popularity&apiKey=390ee8fc7d204cfca949946c7ffd05e8&pageSize=10&q=${search}&page=${page}`);
+            const result = await axios(`https://newsapi.org/v2/top-headlines?country=id&sortBy=popularity&apiKey=390ee8fc7d204cfca949946c7ffd05e8&pageSize=10&q=${search}`);
             setArticles(result.data.articles);
             setLoading(false);
         }
