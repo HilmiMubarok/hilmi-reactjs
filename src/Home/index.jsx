@@ -1,35 +1,32 @@
 import React from "react";
-import Toogle from "../Toogle";
 import me from "../images/me.JPG";
+
+import { motion } from "framer-motion";
 
 function Home() {
 
+
     return (
-        <div className="bg-white dark:bg-gray-900 flex min-h-screen w-full flex-col items-center justify-center">
-
-            <Toogle />
-            <div className="flex flex-col items-center">
-                <img
-                    src={me}
-                    alt="Hilmi Mubarok"
-                    className="h-40 w-40 rounded-full border-4 dark:border-green-300 border-cyan-300 object-cover"
-                />
-                <h1 className="my-4 text-black dark:text-white text-4xl font-bold">Hilmi Mubarok</h1>
-                <h2 className="text-black dark:text-white">Web Developer</h2>
-                <div className="mt-8 flex justify-between w-96">
-                    <div className="p-4 dark:bg-gray-500 bg-gray-900 rounded-xl text-white font-bold">
-                        <p>About</p>
-                    </div>
-                    <div className="p-4 dark:bg-gray-500 bg-gray-900 rounded-xl text-white font-bold">
-                        <p>My Projects</p>
-                    </div>
-                    <div className="p-4 dark:bg-gray-500 bg-gray-900 rounded-xl text-white font-bold">
-                        <p>Contact</p>
-                    </div>
+        <motion.div initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            transition={{ duration: .5 }} >
+            <div className="w-full flex flex-col md:flex-row-reverse  justify-between px-60 items-center mt-24">
+                <div>
+                    <img
+                        src={me}
+                        alt="Hilmi Mubarok"
+                        className="w-[450px] h-[600px] rounded-[50px] shadow-xl object-cover"
+                    />
                 </div>
-            </div>
+                <div>
+                    <h1 className="text-4xl">Hi, I'm</h1>
+                    <h1 className="my-4 text-7xl font-bold">Hilmi Mubarok</h1>
+                    <h2 className="text-4xl">Welcome to my website</h2>
+                </div>
 
-        </div>
+            </div>
+        </motion.div>
     );
 }
 

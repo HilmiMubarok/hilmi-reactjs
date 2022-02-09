@@ -7,8 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'body': '#17171F',
-        'body-light': '#252530',
+        'bg-light': '#FFF',
+        'font-light': '#023047',
+
+        'bg-dark': '#293241',
+        'font-dark': '#E0FBFC',
       },
     },
   },

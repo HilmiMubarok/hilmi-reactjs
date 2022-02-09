@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const formik = useFormik({
@@ -26,117 +27,122 @@ const ContactForm = () => {
     },
   });
   return (
-    <form className="grid-row grid gap-4" onSubmit={formik.handleSubmit}>
-      {formik.touched.name && formik.errors.name ? (
-        <div>
-          <label htmlFor="name" className="text-xl">
-            Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-            className="mt-4 w-full rounded-lg border-2 border-red-500 bg-gray-900 p-4 text-white"
-            placeholder="Input your name"
-          />
-          <div className="p-3 font-bold text-red-500">{formik.errors.name}</div>
-        </div>
-      ) : (
-        <div>
-          <label htmlFor="name" className="text-xl">
-            Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-            className="mt-4 w-full rounded-lg bg-gray-900 p-4 text-white"
-            placeholder="Input your name"
-          />
-        </div>
-      )}
-
-      {formik.touched.email && formik.errors.email ? (
-        <div>
-          <label htmlFor="email" className="text-xl">
-            Email
-          </label>
-          <input
-            id="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            type="email"
-            className="mt-4 w-full rounded-lg border-2 border-red-500 bg-gray-900 p-4 text-white"
-            placeholder="Input your email"
-          />
-          <div className="p-3 font-bold text-red-500">
-            {formik.errors.email}
+    <motion.div initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 0 }}
+      transition={{ duration: .5 }} >
+      <form className="grid-row grid gap-4" onSubmit={formik.handleSubmit}>
+        {formik.touched.name && formik.errors.name ? (
+          <div>
+            <label htmlFor="name" className="text-xl">
+              Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+              className="mt-4 w-full rounded-lg border-2 border-red-500 bg-gray-900 p-4 text-white"
+              placeholder="Input your name"
+            />
+            <div className="p-3 font-bold text-red-500">{formik.errors.name}</div>
           </div>
-        </div>
-      ) : (
-        <div>
-          <label htmlFor="email" className="text-xl">
-            Email
-          </label>
-          <input
-            id="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            type="email"
-            className="mt-4 w-full rounded-lg bg-gray-900 p-4 text-white"
-            placeholder="Input your email"
-          />
-        </div>
-      )}
+        ) : (
+          <div>
+            <label htmlFor="name" className="text-xl">
+              Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+              className="mt-4 w-full rounded-lg bg-gray-900 p-4 text-white"
+              placeholder="Input your name"
+            />
+          </div>
+        )}
 
-      {formik.touched.msg && formik.errors.msg ? (
-        <div>
-          <label htmlFor="msg" className="text-xl">
-            Message
-          </label>
-          <textarea
-            id="msg"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            rows="10"
-            className="mt-4 w-full rounded-lg border-2 border-red-500 bg-gray-900 p-4 text-white"
-            value={formik.values.msg}
-          >
-            {formik.values.msg}
-          </textarea>
-          <div className="p-3 font-bold text-red-500">{formik.errors.msg}</div>
-        </div>
-      ) : (
-        <div>
-          <label htmlFor="msg" className="text-xl">
-            Message
-          </label>
-          <textarea
-            id="msg"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            rows="10"
-            className="mt-4 w-full rounded-lg bg-gray-900 p-4 text-white"
-            value={formik.values.msg}
-          >
-            {formik.values.msg}
-          </textarea>
-        </div>
-      )}
+        {formik.touched.email && formik.errors.email ? (
+          <div>
+            <label htmlFor="email" className="text-xl">
+              Email
+            </label>
+            <input
+              id="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              type="email"
+              className="mt-4 w-full rounded-lg border-2 border-red-500 bg-gray-900 p-4 text-white"
+              placeholder="Input your email"
+            />
+            <div className="p-3 font-bold text-red-500">
+              {formik.errors.email}
+            </div>
+          </div>
+        ) : (
+          <div>
+            <label htmlFor="email" className="text-xl">
+              Email
+            </label>
+            <input
+              id="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              type="email"
+              className="mt-4 w-full rounded-lg bg-gray-900 p-4 text-white"
+              placeholder="Input your email"
+            />
+          </div>
+        )}
 
-      <button
-        type="submit"
-        className="w-full rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 p-3 hover:bg-gradient-to-l hover:from-orange-500 hover:to-amber-500 sm:w-[200px]"
-      >
-        Send to me
-      </button>
-    </form>
+        {formik.touched.msg && formik.errors.msg ? (
+          <div>
+            <label htmlFor="msg" className="text-xl">
+              Message
+            </label>
+            <textarea
+              id="msg"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              rows="10"
+              className="mt-4 w-full rounded-lg border-2 border-red-500 bg-gray-900 p-4 text-white"
+              value={formik.values.msg}
+            >
+              {formik.values.msg}
+            </textarea>
+            <div className="p-3 font-bold text-red-500">{formik.errors.msg}</div>
+          </div>
+        ) : (
+          <div>
+            <label htmlFor="msg" className="text-xl">
+              Message
+            </label>
+            <textarea
+              id="msg"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              rows="10"
+              className="mt-4 w-full rounded-lg bg-gray-900 p-4 text-white"
+              value={formik.values.msg}
+            >
+              {formik.values.msg}
+            </textarea>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          className="w-full rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 p-3 hover:bg-gradient-to-l hover:from-orange-500 hover:to-amber-500 sm:w-[200px]"
+        >
+          Send to me
+        </button>
+      </form>
+    </motion.div>
   );
 };
 
