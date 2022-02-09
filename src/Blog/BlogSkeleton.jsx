@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class BlogSkeleton extends Component {
-    render() {
-        return (
-            <div className="p-4 w-full bg-white overflow-hidden shadow hover:shadow-md rounded-lg">
-                <div className="animate-pulse flex flex-col">
-                    <div className="rounded w-full h-52 bg-gray-200"></div>
-                    <div className="flex flex-col mt-5">
-                        <div className="w-full h-5 bg-gray-200 rounded"></div>
-                        <div className="mt-2 w-10/12 h-3 bg-gray-200 rounded"></div>
-                        <div className="mt-2 w-8/12 h-3 bg-gray-200 rounded"></div>
-                    </div>
+  render() {
+    return (
+      <div className="w-full overflow-hidden rounded-lg bg-white p-4 shadow hover:shadow-md">
+        <div className="flex animate-pulse flex-col">
+          <div className="h-52 w-full rounded bg-gray-200"></div>
+          <div className="mt-5 flex flex-col">
+            <div className="h-5 w-full rounded bg-gray-200"></div>
+            <div className="mt-2 h-3 w-10/12 rounded bg-gray-200"></div>
+            <div className="mt-2 h-3 w-8/12 rounded bg-gray-200"></div>
+          </div>
 
-                    <div className="grid grid-cols-2 mt-5 gap-x-2 gap-y-1">
-                        <div className="mt-2 w-full h-3 bg-gray-200 rounded"></div>
-                        <div className="mt-2 w-full h-3 bg-gray-200 rounded"></div>
-                        <div className="mt-2 w-full h-3 bg-gray-200 rounded"></div>
-                        <div className="mt-2 w-full h-3 bg-gray-200 rounded"></div>
-                    </div>
+          <div className="mt-5 grid grid-cols-2 gap-x-2 gap-y-1">
+            <div className="mt-2 h-3 w-full rounded bg-gray-200"></div>
+            <div className="mt-2 h-3 w-full rounded bg-gray-200"></div>
+            <div className="mt-2 h-3 w-full rounded bg-gray-200"></div>
+            <div className="mt-2 h-3 w-full rounded bg-gray-200"></div>
+          </div>
 
-                    <div className="flex items-center mt-5">
-                        <div>
-                            <div className="rounded-full bg-gray-200 w-10 h-10"></div>
-                        </div>
-                        <div className="flex justify-between w-full ml-3">
-                            <div className="w-5/12 h-3 bg-gray-200 rounded"></div>
-                            <div className="w-2/12 h-3 bg-gray-200 rounded"></div>
-                        </div>
-                    </div>
-                </div>
+          <div className="mt-5 flex items-center">
+            <div>
+              <div className="h-10 w-10 rounded-full bg-gray-200"></div>
             </div>
-        );
-    }
+            <div className="ml-3 flex w-full justify-between">
+              <div className="h-3 w-5/12 rounded bg-gray-200"></div>
+              <div className="h-3 w-2/12 rounded bg-gray-200"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default BlogSkeleton;
