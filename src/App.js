@@ -5,7 +5,9 @@ import Home from "./Home";
 import About from "./About";
 import Navbar from "./Navbar";
 import NoMatch from "./NoMatch";
-import Contact from "./Contact";
+import Quran from "./Quran";
+import Surah from "./Quran/Surah";
+import Movies from "./Movies";
 
 function App() {
   const location = useLocation();
@@ -16,7 +18,9 @@ function App() {
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="quran" element={<Quran />} />
+            <Route path="surah/:id" element={<Surah />} />
+            <Route path="movies" element={<Movies />} />
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>

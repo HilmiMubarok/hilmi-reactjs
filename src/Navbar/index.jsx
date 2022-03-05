@@ -5,7 +5,6 @@ import { Link, Outlet } from "react-router-dom";
 export default function Navbar() {
 
 
-
     const [dark, setDark] = useState(false);
     const [text, setText] = useState("Dark Mode");
 
@@ -50,9 +49,9 @@ export default function Navbar() {
                             <li>
                                 <Link to="/about" className="block py-2 pr-4 pl-3 text-font-light bg-bg-light rounded md:bg-transparent md:p-0 dark:text-font-dark dark:bg-bg-dark" aria-current="page">About</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="/contact" className="block py-2 pr-4 pl-3 text-font-light bg-bg-light rounded md:bg-transparent md:p-0 dark:text-font-dark dark:bg-bg-dark" aria-current="page">Contact</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
