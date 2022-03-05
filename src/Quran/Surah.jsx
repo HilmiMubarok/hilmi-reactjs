@@ -9,14 +9,13 @@ const Surah = () => {
 
     const [surah, setSurah] = useState([]);
     useEffect(() => {
+        const fetchSurah = async () => {
+            const data = await axios.get(`https://api.quran.sutanlab.id/surah/${id}`)
+            const surah = await data.data.data
+            setSurah(surah)
+        }
         fetchSurah()
     }, [])
-
-    const fetchSurah = async () => {
-        const data = await axios.get(`https://api.quran.sutanlab.id/surah/${id}`)
-        const surah = await data.data.data
-        setSurah(surah)
-    }
 
     return (
         <div className='w-full'>

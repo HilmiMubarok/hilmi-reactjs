@@ -6,6 +6,11 @@ function FilterMovie({ popular, setFiltered, activeGenre, setActiveGenre }) {
     const [genres, setGenres] = useState([])
 
     useEffect(() => {
+        const fetchGenres = async () => {
+            const data = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=ed4d5d9ed28ba43922ff616a7797738a&language=en-US')
+            const genres = await data.data.genres
+            setGenres(genres)
+        }
         fetchGenres()
     }, [])
 
@@ -14,16 +19,9 @@ function FilterMovie({ popular, setFiltered, activeGenre, setActiveGenre }) {
             setFiltered(popular)
             return
         }
-
         const filtered = popular.filter(movie => movie.genre_ids.includes(activeGenre))
         setFiltered(filtered)
     }, [activeGenre])
-
-    const fetchGenres = async () => {
-        const data = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=ed4d5d9ed28ba43922ff616a7797738a&language=en-US')
-        const genres = await data.data.genres
-        setGenres(genres)
-    }
 
 
     return (
