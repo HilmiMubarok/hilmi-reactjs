@@ -5,10 +5,9 @@ import { useState, useEffect } from 'react';
 
 
 const Surah = () => {
-    // const { id } = useParams();
+    const { id } = useParams();
 
     const [surah, setSurah] = useState([]);
-    const [id, setId] = useState(useParams().id);
 
     useEffect(() => {
         const fetchSurah = async () => {
@@ -17,7 +16,7 @@ const Surah = () => {
             setSurah(surah)
         }
         fetchSurah()
-    }, [])
+    }, [id])
 
     return (
         <div className='w-full'>
