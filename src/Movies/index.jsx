@@ -12,15 +12,16 @@ function Movies() {
     const [activeGenre, setActiveGenre] = useState(0)
 
     useEffect(() => {
+        const fetchPopular = async () => {
+            const data = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=ed4d5d9ed28ba43922ff616a7797738a&language=en-US')
+            const movies = await data.data.results
+            setPopular(movies)
+            setFiltered(movies)
+        }
         fetchPopular()
     }, [])
 
-    const fetchPopular = async () => {
-        const data = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=ed4d5d9ed28ba43922ff616a7797738a&language=en-US')
-        const movies = await data.data.results
-        setPopular(movies)
-        setFiltered(movies)
-    }
+
     return (
         <>
             <h1 className='text-center text-3xl font-bold mt-5'>Popular Movies</h1>

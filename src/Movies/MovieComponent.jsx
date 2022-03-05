@@ -1,8 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-
-
 function MovieComponent({ movie }) {
     return (
         <motion.div layout animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1 }}>

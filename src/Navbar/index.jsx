@@ -49,9 +49,6 @@ export default function Navbar() {
                             <li>
                                 <Link to="/about" className="block py-2 pr-4 pl-3 text-font-light bg-bg-light rounded md:bg-transparent md:p-0 dark:text-font-dark dark:bg-bg-dark" aria-current="page">About</Link>
                             </li>
-                            {/* <li>
-                                <Link to="/contact" className="block py-2 pr-4 pl-3 text-font-light bg-bg-light rounded md:bg-transparent md:p-0 dark:text-font-dark dark:bg-bg-dark" aria-current="page">Contact</Link>
-                            </li> */}
                         </ul>
                     </div>
                 </div>
