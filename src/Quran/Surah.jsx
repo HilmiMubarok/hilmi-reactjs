@@ -5,10 +5,10 @@ import { useState, useEffect } from 'react';
 
 
 const Surah = () => {
-    const { id } = useParams();
 
     const [surah, setSurah] = useState([]);
     useEffect(() => {
+        const { id } = useParams();
         const fetchSurah = async () => {
             const data = await axios.get(`https://api.quran.sutanlab.id/surah/${id}`)
             const surah = await data.data.data
